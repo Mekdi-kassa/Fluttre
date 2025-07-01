@@ -115,16 +115,24 @@ class MyApp extends StatelessWidget {
           actions: [IconButton(onPressed: () {}, icon: Icon(Icons.login))],
         ),
 
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        body: ListView(
+          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          // crossAxisAlignment: CrossAxisAlignment.end,
+          // mainAxisAlignment: MainAxisAlignment.center,
+          scrollDirection: Axis.horizontal,
           children: [
-            Container(height: 100, width: 100, color: Colors.deepPurpleAccent),
+            Container(height: 200, width: 200, color: Colors.deepPurpleAccent),
+
             Container(
               height: 100,
               width: 100,
               color: const Color.fromARGB(255, 125, 39, 68),
             ),
-            Container(width: 100, height: 100, color: Colors.white),
+            Container(
+              width: 50,
+              height: 50,
+              color: const Color.fromARGB(255, 8, 2, 2),
+            ),
           ],
         ),
         // body: Center(
