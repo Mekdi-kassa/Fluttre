@@ -103,10 +103,58 @@ class MyApp extends StatelessWidget {
     for (var item in set1) {
       print(item);
     }
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner:
           false, //to remove the debug sign on the above we use this
-      home: Scaffold(),
+      home: Scaffold(
+        backgroundColor: Color.fromARGB(255, 247, 77, 133),
+        appBar: AppBar(
+          title: Text("my app Bar"),
+          elevation: 0,
+          leading: Icon(Icons.menu),
+          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.login))],
+        ),
+
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(height: 100, width: 100, color: Colors.deepPurpleAccent),
+            Container(
+              height: 100,
+              width: 100,
+              color: const Color.fromARGB(255, 125, 39, 68),
+            ),
+            Container(width: 100, height: 100, color: Colors.white),
+          ],
+        ),
+        // body: Center(
+
+        //   child: Container(
+        //     height: 100,
+        //     width: 200,
+
+        //     decoration: BoxDecoration(
+        //       borderRadius: BorderRadius.circular(20),
+        //       color: Colors.deepPurpleAccent,
+        //     ),
+        //     padding: EdgeInsets.all(25),
+
+        //     // child: Text(
+        //     //   "I love Mekdi",
+        //     //   style: TextStyle(
+        //     //     color: Colors.white,
+        //     //     fontSize: 25,
+        //     //     fontWeight: FontWeight.bold,
+        //     //   ),
+        //     // ),
+        //     // child: Icon(
+        //     //   Icons.favorite,
+        //     //   color: const Color.fromARGB(255, 255, 255, 255),
+        //     //   size: 64,
+        //     // ),
+        //   ),
+        // ),
+      ),
     ); //matrial app
   }
 }
