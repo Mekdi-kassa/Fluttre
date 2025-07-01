@@ -114,27 +114,30 @@ class MyApp extends StatelessWidget {
           leading: Icon(Icons.menu),
           actions: [IconButton(onPressed: () {}, icon: Icon(Icons.login))],
         ),
-
-        body: ListView(
-          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          // crossAxisAlignment: CrossAxisAlignment.end,
-          // mainAxisAlignment: MainAxisAlignment.center,
-          scrollDirection: Axis.horizontal,
-          children: [
-            Container(height: 200, width: 200, color: Colors.deepPurpleAccent),
-
-            Container(
-              height: 100,
-              width: 100,
-              color: const Color.fromARGB(255, 125, 39, 68),
-            ),
-            Container(
-              width: 50,
-              height: 50,
-              color: const Color.fromARGB(255, 8, 2, 2),
-            ),
-          ],
+        body: ListView.builder(
+          itemCount: names.length,
+          itemBuilder: (context, index) => ListTile(title: Text(names[index])),
         ),
+        // body: ListView(
+        //   // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //   // crossAxisAlignment: CrossAxisAlignment.end,
+        //   // mainAxisAlignment: MainAxisAlignment.center,
+        //   scrollDirection: Axis.horizontal,
+        //   children: [
+        //     Container(height: 200, width: 200, color: Colors.deepPurpleAccent),
+
+        //     Container(
+        //       height: 100,
+        //       width: 100,
+        //       color: const Color.fromARGB(255, 125, 39, 68),
+        //     ),
+        //     Container(
+        //       width: 50,
+        //       height: 50,
+        //       color: const Color.fromARGB(255, 8, 2, 2),
+        //     ),
+        //   ],
+        // ),
         // body: Center(
 
         //   child: Container(
