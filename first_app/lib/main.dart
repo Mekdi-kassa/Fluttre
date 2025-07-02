@@ -1,4 +1,8 @@
+import 'package:first_app/pages/first_page.dart';
+import 'package:first_app/pages/second_page.dart';
+import 'package:first_app/pages/settings_page.dart';
 import 'package:flutter/material.dart';
+import 'package:first_app/pages/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -106,66 +110,108 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner:
           false, //to remove the debug sign on the above we use this
-      home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 247, 77, 133),
-        appBar: AppBar(
-          title: Text("my app Bar"),
-          elevation: 0,
-          leading: Icon(Icons.menu),
-          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.login))],
-        ),
-        body: ListView.builder(
-          itemCount: names.length,
-          itemBuilder: (context, index) => ListTile(title: Text(names[index])),
-        ),
-        // body: ListView(
-        //   // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //   // crossAxisAlignment: CrossAxisAlignment.end,
-        //   // mainAxisAlignment: MainAxisAlignment.center,
-        //   scrollDirection: Axis.horizontal,
-        //   children: [
-        //     Container(height: 200, width: 200, color: Colors.deepPurpleAccent),
+      home: FirstPage(),
+      routes: {
+        '/secondpage': (context) => SecondPage(),
+        '/settings': (context) => SettingsPage(),
+        '/homepage': (context) => homepage(),
+      },
 
-        //     Container(
-        //       height: 100,
-        //       width: 100,
-        //       color: const Color.fromARGB(255, 125, 39, 68),
-        //     ),
-        //     Container(
-        //       width: 50,
-        //       height: 50,
-        //       color: const Color.fromARGB(255, 8, 2, 2),
-        //     ),
-        //   ],
-        // ),
-        // body: Center(
+      // home: Scaffold(
+      //   backgroundColor: Color.fromARGB(255, 247, 77, 133),
+      //   appBar: AppBar(
+      //     title: Text("my app Bar"),
+      //     elevation: 0,
+      //     leading: Icon(Icons.menu),
+      //     actions: [IconButton(onPressed: () {}, icon: Icon(Icons.login))],
+      //   ),
+      //   body: Center(
+      //     child: GestureDetector(
+      //       onTap: () => {print("user tabed")},
+      //       child: Container(
+      //         height: 200,
+      //         width: 200,
+      //         color: const Color.fromARGB(255, 126, 96, 207),
+      //         child: Center(child: Text("Tap Me!")),
+      //       ),
+      //     ),
+      //   ),
+      // body: Stack(
+      //   alignment: Alignment.center,
+      //   children: [
+      //     Container(width: 300, height: 300, color: Colors.deepPurple),
+      //     Container(
+      //       width: 200,
+      //       height: 200,
+      //       color: const Color.fromARGB(255, 140, 127, 177),
+      //     ),
+      //     Container(
+      //       width: 100,
+      //       height: 100,
+      //       color: const Color.fromARGB(255, 171, 150, 227),
+      //     ),
+      //   ],
+      // ),
+      // body: GridView.builder(
+      //   itemCount: 64,
+      //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      //     crossAxisCount: 8,
+      //   ),
+      //   itemBuilder: (context, index) =>
+      //       Container(color: Colors.blueGrey, margin: EdgeInsets.all(2 )),
+      // ),
+      // body: ListView.builder(
+      //   itemCount: names.length,
+      //   itemBuilder: (context, index) => ListTile(title: Text(names[index ])),
+      // ),
+      // body: ListView(
+      //   // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //   // crossAxisAlignment: CrossAxisAlignment.end,
+      //   // mainAxisAlignment: MainAxisAlignment.center,
+      //   scrollDirection: Axis.horizontal,
+      //   children: [
+      //     Container(height: 200, width: 200, color: Colors.deepPurpleAccent),
 
-        //   child: Container(
-        //     height: 100,
-        //     width: 200,
+      //     Container(
+      //       height: 100,
+      //       width: 100,
+      //       color: const Color.fromARGB(255, 125, 39, 68),
+      //     ),
+      //     Container(
+      //       width: 50,
+      //       height: 50,
+      //       color: const Color.fromARGB(255, 8, 2, 2),
+      //     ),
+      //   ],
+      // ),
+      // body: Center(
 
-        //     decoration: BoxDecoration(
-        //       borderRadius: BorderRadius.circular(20),
-        //       color: Colors.deepPurpleAccent,
-        //     ),
-        //     padding: EdgeInsets.all(25),
+      //   child: Container(
+      //     height: 100,
+      //     width: 200,
 
-        //     // child: Text(
-        //     //   "I love Mekdi",
-        //     //   style: TextStyle(
-        //     //     color: Colors.white,
-        //     //     fontSize: 25,
-        //     //     fontWeight: FontWeight.bold,
-        //     //   ),
-        //     // ),
-        //     // child: Icon(
-        //     //   Icons.favorite,
-        //     //   color: const Color.fromARGB(255, 255, 255, 255),
-        //     //   size: 64,
-        //     // ),
-        //   ),
-        // ),
-      ),
-    ); //matrial app
+      //     decoration: BoxDecoration(
+      //       borderRadius: BorderRadius.circular(20),
+      //       color: Colors.deepPurpleAccent,
+      //     ),
+      //     padding: EdgeInsets.all(25),
+
+      //     // child: Text(
+      //     //   "I love Mekdi",
+      //     //   style: TextStyle(
+      //     //     color: Colors.white,
+      //     //     fontSize: 25,
+      //     //     fontWeight: FontWeight.bold,
+      //     //   ),
+      //     // ),
+      //     // child: Icon(
+      //     //   Icons.favorite,
+      //     //   color: const Color.fromARGB(255, 255, 255, 255),
+      //     //   size: 64,
+      //     // ),
+      //   ),
+      // ),
+    );
+    //matrial app
   }
 }
